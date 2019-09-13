@@ -5,4 +5,55 @@ Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 
-*/
+universal reset*/
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box; 
+    /*border-box makes all the divs to be of same width even if they have padding and margin.*/
+
+}
+body
+{
+    font-family: "Lato",sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding:30px;
+
+}
+.header
+{
+    position: relative;
+    height: 95vh;/*95% of viewport*/
+    background-image: linear-gradient(to right bottom,#7ed56fa1,#28b485a1),url(../img/hero.jpg); /* adding two layers and then having opacity of the linear gradient colors to be lesser than 1 , ".." in url is to go a folder up.*/
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0% 98%);//we have to add coordinates --- use bennettfeely.com/clippy to get coordinates of awesome polygons.
+
+
+}
+.logo-box
+{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.logo
+{
+    height: 35px;
+}
+.heading-primary
+{
+    color: #fff;
+}
+.heading-primary-main
+{
+
+}
+
+.heading-primary-sub
+{
+
+}
