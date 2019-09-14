@@ -44,17 +44,27 @@ body
 {
     height: 35px;
 }
+
 .text-box
 {
     position: absolute;
     top: 40%; /*absolute position from parent elem*/
     left: 50%;
-    transform: translate(-50%,-50%);/*transform_shifts the obj from its original absolute_position*/
+    transform: translate(-50%,-50%);
+    /*transform_shifts the obj from its original absolute_position
+      translate shifts in x and y axis
+      we can use Rotate to rotate:)
+      and try out other transformations as well'
+    */
+    text-align: center;
 }
 .heading-primary
 {
     color: #fff;
     text-transform: uppercase;
+    margin-bottom: 60px;
+    backface-visibility: hidden;
+    /* to reduce shaking that happens during animation  */
 }
 .heading-primary-main
 {
@@ -79,10 +89,12 @@ body
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
-    
-    animation-name: moveInRight;
+
+    /* animation-name: moveInRight;
     animation-duration: 1s;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-out; */
+
+    animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft{
@@ -115,4 +127,35 @@ body
         opacity: 1;
         transform: translateX(0);
     }
+}
+/* we can have .btn:visited to set a look for the button once it is visited 
+:psuedo class -> can be active, hover, visited etc */
+.btn:link,
+.btn:visited
+{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all;
+}
+/* inline blockadds \n */
+/* hover elevates the button by 2px(from original position) */
+.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2) ;
+
+}
+/* active elevates the button by 1px from original but it lowers the button relatively by 1 px from its previous location */
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2) ;
+}
+
+.btn-white{
+
+background-color:#fff;
+color:#777;
+
 }
