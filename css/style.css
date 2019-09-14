@@ -30,7 +30,7 @@ body
     background-image: linear-gradient(to right bottom,#7ed56fa1,#28b485a1),url(../img/hero.jpg); /* adding two layers and then having opacity of the linear gradient colors to be lesser than 1 , ".." in url is to go a folder up.*/
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0,100% 0,100% 75vh,0% 98%);//we have to add coordinates --- use bennettfeely.com/clippy to get coordinates of awesome polygons.
+    clip-path: polygon(0 0,100% 0,100% 75vh,0% 98%);/*we have to add coordinates --- use bennettfeely.com/clippy to get coordinates of awesome polygons. */
 
 
 }
@@ -44,6 +44,13 @@ body
 {
     height: 35px;
 }
+.text-box
+{
+    position: absolute;
+    top: 40%; /*absolute position from parent elem*/
+    left: 50%;
+    transform: translate(-50%,-50%);/*transform_shifts the obj from its original absolute_position*/
+}
 .heading-primary
 {
     color: #fff;
@@ -55,6 +62,15 @@ body
     font-size: 60px;
     font-weight : 400;
     letter-spacing:35px;
+/* animation defined by us under the keyframes  */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* ease out is fast in beginning and slow in end, check out other animation-timing-function */
+    /* animation-iteration-count: 3;
+    animation-delay: 1s; */
+
+
 }
 
 .heading-primary-sub
@@ -63,4 +79,21 @@ body
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+}
+
+@keyframes moveInLeft{
+    /* % completion of the animation */
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+        /* translatex helps us move in x axis */
+    }
+    70%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
